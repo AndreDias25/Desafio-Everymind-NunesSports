@@ -1,0 +1,35 @@
+<div class="container">
+  <form action="">
+    <div>
+      <label for="">ID</label>
+      <input type="text" style="border: 1px solid green;" value="{{ idProduto }}" disabled>
+    </div>
+    <div>
+      <label for="">Código</label>
+      <input type="text" style="border: 1px solid green;" value="{{ codigoProduto }}" disabled>
+    </div>
+    <div>
+      <label for="">Nome</label>
+      <input type="text" style="border: 1px solid green;" value="{{ nomeProduto }}" disabled>
+    </div>
+    <div>
+      <label for="">Descrição</label>
+      <input type="text" style="border: 1px solid green;" value="{{ descricaoProduto }}" disabled>
+    </div>
+    <div>
+      <label for="">Preço</label>
+      <input type="text" style="border: 1px solid green;" value="{{ precoProduto }}" disabled>
+    </div>
+    <div>
+      <label for="">Data</label>
+      <input type="text" style="border: 1px solid green;" value="{{ dataProduto }}" disabled>
+    </div>
+  </form>
+  <app-btn-editar  [idProduto]="idProduto"
+  [codigoProduto]="codigoProduto"
+  [nomeProduto]="nomeProduto"
+  [descricaoProduto]="descricaoProduto"
+  [precoProduto]="precoProduto"
+  [dataProduto]="dataProduto"></app-btn-editar>
+  <app-btn-excluir [idProduto]="idProduto"></app-btn-excluir>
+</div>

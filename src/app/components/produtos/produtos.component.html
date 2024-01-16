@@ -1,0 +1,6 @@
+<div class="container">
+  <p>Lista de produtos</p>
+
+  <app-btn-adicionar></app-btn-adicionar>
+  <app-produto *ngFor="let produto of dadosResgatados" [idProduto]="produto.idProduto" [codigoProduto]="produto.codigoProduto" [nomeProduto]="produto.nomeProduto" [descricaoProduto]="produto.descricaoProduto" [precoProduto]="produto.precoProduto" [dataProduto]="produto.created_at"></app-produto>
+</div>

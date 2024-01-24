@@ -1,6 +1,7 @@
 # NunesSports 
 ![Texto Alternativo](https://slvqfnsrcvvepqeebzvg.supabase.co/storage/v1/object/public/Photos/logo_dark.png)
 - Descrição: Teste desenvolvido para a empresa EveryMind para o cardo de Trainee em desenvolvimento, com o objetivo de criar um dashboard de produtos. Ao longo da construção do projeto, incrementei conceitos como ciclo de vida de componentes, services, pipes e requisições HttpClient.
+- Link de acesso: https://voluble-queijadas-d80bcb.netlify.app/inicio
 
 ## Tecnologias
 

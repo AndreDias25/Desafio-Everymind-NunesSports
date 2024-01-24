@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SupabaseClient } from '@supabase/supabase-js';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,12 @@ export class ProdutoService {
     return this.httpClient.get(this.apiUrl, {headers});
   }
 
+  private dadosAtualizados = new Subject<void>();
+
+  getDadosAtualizadosObservable(): Observable<void> {
+    return this.dadosAtualizados.asObservable();
+  }
+
   adicionarProduto(produto: any): Observable<any>{
     const headers = {
       'Content-Type': 'application/json',
@@ -41,6 +48,7 @@ export class ProdutoService {
     console.log(`${idProduto}`);
     console.log(produto)
     return this.httpClient.patch(`https://slvqfnsrcvvepqeebzvg.supabase.co/rest/v1/Produtos?idProduto=eq.${idProduto}`, produto, {headers})
+    .pipe(tap(() => this.dadosAtualizados.next())); // Emite um novo valor no Subject após a edição
   }
 
   excluirProduto(idProduto:number): Observable<any>{
@@ -50,6 +58,7 @@ export class ProdutoService {
     }
 
     return this.httpClient.delete(`https://slvqfnsrcvvepqeebzvg.supabase.co/rest/v1/Produtos?idProduto=eq.${idProduto}`, {headers})
+    .pipe(tap(() => this.dadosAtualizados.next())); // Emite um novo valor no Subject após a exclusão
   }
 
 }

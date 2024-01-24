@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <form action="">
     <div>
       <label for="">ID</label>
@@ -32,4 +32,25 @@
   [precoProduto]="precoProduto"
   [dataProduto]="dataProduto"></app-btn-editar>
   <app-btn-excluir [idProduto]="idProduto"></app-btn-excluir>
+</div> -->
+<div href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mt-4">
+  <img class="object-cover w-full rounded-t-lg h-1/2 md:w-48 md:rounded-none md:rounded-s-lg" src="https://slvqfnsrcvvepqeebzvg.supabase.co/storage/v1/object/public/Photos/3d-fluency-clothes.png" alt="">
+  <div class="flex flex-col justify-between p-4 leading-normal w-full lg:w-1/2">
+      <div class="flex justify-between dark:text-standard-white">
+        <p>#{{ codigoProduto }}</p>
+        <p>{{ dataProduto | date:'d/MM/yyyy'}}</p>
+      </div>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-standard-white">{{ nomeProduto | titlecase }}</h5>
+      <p class="dark:text-standard-white">{{ precoProduto | currency:'BRL' }}</p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 dark:text-standard-white">{{ descricaoProduto }}</p>
+      <div class="flex justify-between">
+        <app-btn-editar  [idProduto]="idProduto"
+[codigoProduto]="codigoProduto"
+[nomeProduto]="nomeProduto"
+[descricaoProduto]="descricaoProduto"
+[precoProduto]="precoProduto"
+[dataProduto]="dataProduto"></app-btn-editar>
+<app-btn-excluir [idProduto]="idProduto"></app-btn-excluir>
+      </div>
+  </div>
 </div>

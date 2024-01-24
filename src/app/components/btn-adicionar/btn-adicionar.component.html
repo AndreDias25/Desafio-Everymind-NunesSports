@@ -1,5 +1,5 @@
 <!-- Modal toggle -->
-<button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+<button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-green-success hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-success dark:hover:bg-green-success dark:focus:bg-green-success" type="button">
   Adicionar
 </button>
 
@@ -24,28 +24,28 @@
             <div class="p-4 md:p-5 space-y-4">
               <form class="max-w-sm mx-auto">
                 <div class="mb-5">
-                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Produto</label>
-                  <input type="text" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required #nomeProduto>
+                  <label for="nomeProduto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nome do Produto</label>
+                  <input type="text" id="nomeProduto" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Nome do produto" required #nomeProduto>
                 </div>
                 <div class="mb-5">
-                  <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Código</label>
-                  <input type="text" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required #codigoProduto>
+                  <label for="codigoProduto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Código</label>
+                  <input type="text" (input)="validarNumero($event)" name="codigoProduto" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="001" required #codigoProduto>
                 </div>
                 <div class="mb-5">
-                  <label for="repeat-password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Preço</label>
-                  <input type="text" id="repeat-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required #precoProduto>
+                  <label for="precoProduto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Preço</label>
+                  <input currencyMask [options]="{ prefix: 'R$ ', align: 'left'}" type="text" name="precoProduto" id="repeat-password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="R$ 00.00" required #precoProduto>
                 </div>
                 <div class="mb-5">
-                  <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição</label>
-                  <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..." #descricaoProduto></textarea>
+                  <label for="descricaoProduto" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Descrição</label>
+                  <textarea id="message" name="descricaoProduto" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Descreva o produto" #descricaoProduto></textarea>
                 </div>
 
               </form>
             </div>
             <!-- Modal footer -->
             <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button data-modal-hide="default-modal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" (click)="adicionarProduto(nomeProduto.value, codigoProduto.value, precoProduto.value, descricaoProduto.value)">Adicionar</button>
-                <button data-modal-hide="default-modal" type="button" class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
+                <button data-modal-hide="default-modal" type="button" class="text-white bg-standard-blue hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-standard-blue dark:hover:bg-blue-700 dark:focus:ring-blue-800" (click)="adicionarProduto(nomeProduto.value, codigoProduto.value, precoProduto.value, descricaoProduto.value)" [disabled]="!nomeProduto.value || !codigoProduto.value || !precoProduto.value || !descricaoProduto.value">Adicionar</button>
+                <button data-modal-hide="default-modal" type="button" class="ms-3 text-standard-white bg-red-danger hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-red-danger dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancelar</button>
             </div>
         </div>
     </div>
